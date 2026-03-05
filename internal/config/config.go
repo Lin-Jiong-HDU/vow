@@ -18,13 +18,15 @@ const (
 
 // Config represents the application configuration
 type Config struct {
-	DailyWordCount int `json:"dailyWordCount"`
+	DailyWordCount int  `json:"dailyWordCount"`
+	Shuffle        bool `json:"shuffle"`
 }
 
 // New creates a new Config with default values
 func New() *Config {
 	return &Config{
 		DailyWordCount: DefaultDailyWordCount,
+		Shuffle:        false, // 默认不打乱
 	}
 }
 
