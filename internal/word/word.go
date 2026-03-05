@@ -14,8 +14,8 @@ type Word struct {
 
 // WordList 表示单词表
 type WordList struct {
-	Name  string  `json:"name"`
-	Words []Word  `json:"words"`
+	Name  string `json:"name"`
+	Words []Word `json:"words"`
 }
 
 // NewWordList 创建一个空的单词表
