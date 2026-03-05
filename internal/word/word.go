@@ -1,6 +1,9 @@
 package word
 
-import "math/rand"
+import (
+	"math/rand"
+	"time"
+)
 
 // Word 表示一个单词及其释义和例句
 type Word struct {
@@ -30,6 +33,7 @@ func (wl *WordList) Count() int {
 
 // Shuffle 使用 Fisher-Yates 算法打乱单词顺序
 func (wl *WordList) Shuffle() {
+	rand.Seed(time.Now().UnixNano()) // 初始化随机种子
 	n := len(wl.Words)
 	for i := n - 1; i > 0; i-- {
 		j := rand.Intn(i + 1)
